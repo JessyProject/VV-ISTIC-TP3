@@ -26,7 +26,7 @@ class Date implements Comparable<Date> {
         int[] months = getMonths(year);
         if(month < 1 || month > 12) return false;
         if(year < 0) return false;
-        return day >= 0 && day <= months[month];
+        return day >= 1 && day <= months[month];
     }
 
     public static boolean isLeapYear(int year) {
