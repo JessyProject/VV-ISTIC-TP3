@@ -95,4 +95,23 @@ class DateTest {
         assertEquals(date2.previousDate(), new Date(28, 2, 1945));
         assertEquals(date3.previousDate(), new Date(31, 12, 1944));
     }
+
+    @Test
+    public void checkCompareTo() {
+        Date dateEqual = new Date(20, 3, 2022);
+        Date dateSuperior1 =  new Date(20, 3, 2023);
+        Date dateSuperior2 =  new Date(20, 4, 2022);
+        Date dateSuperior3 =  new Date(21, 3, 2022);
+        Date dateInferior1 = new Date(20, 3, 2021);
+        Date dateInferior2 = new Date(20, 2, 2022);
+        Date dateInferior3 = new Date(19, 3, 2022);
+
+        assertEquals(date.compareTo(dateEqual), 0);
+        assertEquals(date.compareTo(dateSuperior1), -1);
+        assertEquals(date.compareTo(dateSuperior2), -1);
+        assertEquals(date.compareTo(dateSuperior3), -1);
+        assertEquals(date.compareTo(dateInferior1), 1);
+        assertEquals(date.compareTo(dateInferior2), 1);
+        assertEquals(date.compareTo(dateInferior3), 1);
+    }
 }

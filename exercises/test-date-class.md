@@ -53,3 +53,52 @@ Use the project in [tp3-date](../code/tp3-date) to complete this exercise.
 
 ## Answer
 
+1) Test `isLeapYear`
+
+   - Entiers divisibles par 400
+   - Entiers divisibles par 100 et non par 400
+   - Entiers divisibles par 4 et non par 100 et 400
+   - Entiers divisibles par aucun des nombre ci-dessus
+
+   Test `getMonths(int year)`
+
+   - année bissextile
+   - année non bissextile
+
+   Test `isValidDate`
+
+   - Tester pour des valeurs de jour/mois/année négatives
+   - Tester pour des valeurs qui ne respectent pas les contraintes (ex : mois > 12)
+   - Tester pour des cas particuliers (29 février d'une année bissextile et d'une année non bissextile)
+
+   Test `nextDate` / `previousDate`
+
+   - Tester pour des dates où seul le jour suivant / précédent change
+   - Tester pour des dates où jour et mois changent
+   - Tester pour la date où l'année change (31/12)
+
+   Test `CompareTo`
+
+   - Tester pour une valeur de date null
+   - Tester pour deux dates identiques
+   - Tester pour une date donnée supérieur à la date courante
+   - Test pour une date donnée inférieur à la date courrante
+
+2) Les tests réalisés couvrent 85% des lignes de code de la classe
+
+3) 
+
+4) 
+
+   ```
+   ================================================================================
+   - Statistics
+   ================================================================================
+   >> Line Coverage: 41/48 (85%)
+   >> Generated 74 mutations Killed 60 (81%)
+   >> Mutations with no coverage 6. Test strength 88%
+   >> Ran 135 tests (1.82 tests per mutation)
+   ```
+
+   
+
