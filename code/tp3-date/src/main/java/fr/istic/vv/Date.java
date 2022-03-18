@@ -13,6 +13,7 @@ class Date implements Comparable<Date> {
         this.year = year;
     }
 
+    // Get the number of days for each month based on the year
     public static int[] getMonths(int year) {
         int[] months;
         if(!isLeapYear(year))
