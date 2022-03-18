@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Demo pit test" type="PIT" factoryName="PIT Runner" singleton="false" REPORT_DIR="$PROJECT_DIR$/target/report" SOURCE_DIRS="$PROJECT_DIR$/src/test/java" TARGET_CLASSES="fr.istic.vv.*" TARGET_TESTS="*" otherParams="--outputFormats XML,HTML">
+    <module name="tp3-balanced-strings" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

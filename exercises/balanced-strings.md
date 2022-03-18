@@ -26,3 +26,26 @@ Use the project in [tp3-balanced-strings](../code/tp3-balanced-strings) to compl
 
 ## Answer
 
+1) Plusieurs critères sont à considérer
+   - un bloc où la chaine de caractère à des valeurs particulières, notamment
+     - chaine vide (doit être accepté)
+     - chaine null (doit être refusé)
+   - un bloc avec des chaines valides
+     - soit des chaines simples `() []`
+     - ou des chaines imbriquées `(({[]}))`
+     - les caractères autres que les parenthèses doivent être ignorés`(({z[]f})e)`
+   - enfin, un bloc avec des chaines non valides
+     - commençant par exemple par une parenthèse fermante `))[()]`
+2) 3 méthodes tests ont été utilisés, une pour chaque bloc identifié, ce qui a permis de couvrir 100% du code.
+
+4. En exécutant les tests avec PIT, on obtient le résultat suivant
+
+   ```
+   ================================================================================
+   - Statistics
+   ================================================================================
+   >> Line Coverage: 18/20 (90%)
+   >> Generated 20 mutations Killed 17 (85%)
+   >> Mutations with no coverage 2. Test strength 94%
+   >> Ran 20 tests (1 tests per mutation)
+   ```

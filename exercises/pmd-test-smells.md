@@ -15,3 +15,42 @@ Include the improved test code in this file.
 
 ## Answer
 
+Parmis les tests vus en cours on peut citer
+
+- DetachedTestCase.md
+- JUnit4TestShouldUserTestAnnotation
+- JUnit4TestShouldUserAfterAnnotation
+- JUnit4TestShouldUserBeforeAnnotation
+- JUnitSpelling
+
+Prenons [ce repo](https://github.com/apache/commons-collections) et appliquons par exemple le `DetachedTestCase`.
+
+PMD propose la suggestion suivante
+
+```
+/home/jessy/M2/VV/commons-collections/src/test/java/org/apache/commons/collections4/IterableUtilsTest.java:338:	DetachedTestCase:	Probable detached JUnit test case.
+```
+
+Elle indique qu'il manque l'annotation `@Test` dans le code ci-dessous
+
+```java
+public void getFromIterable() throws Exception {
+	// Collection, entry exists
+	final Bag<String> bag = new HashBag<>();
+	bag.add("element", 1);
+	assertEquals("element", IterableUtils.get(bag, 0));
+}
+```
+
+En effet, l'annotation est manquante, il suffit de l'ajouter en haut de la méthode
+
+```java
+@Test
+public void getFromIterable() throws Exception {
+	// Collection, entry exists
+	final Bag<String> bag = new HashBag<>();
+	bag.add("element", 1);
+	assertEquals("element", IterableUtils.get(bag, 0));
+}
+```
+
