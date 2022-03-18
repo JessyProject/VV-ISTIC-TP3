@@ -55,6 +55,8 @@ class Date implements Comparable<Date> {
     }
 
     public int compareTo(Date other) {
+        if(other == null)
+            throw new NullPointerException("Date is null.");
         if(this.year == other.year && this.month == other.month && this.day == other.day)
             return 0;
         if(this.year == other.year && this.month == other.month)
