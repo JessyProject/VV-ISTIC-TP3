@@ -1,9 +1,14 @@
 package fr.istic.vv;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 class Date implements Comparable<Date> {
-    int day;
-    int month;
-    int year;
+    private int day;
+    private int month;
+    private int year;
 
     public Date(int day, int month, int year) {
         if(!isValidDate(day, month, year))
@@ -14,7 +19,7 @@ class Date implements Comparable<Date> {
     }
 
     // Get the number of days for each month based on the year
-    public static int[] getMonths(int year) {
+    public int[] getMonths(int year) {
         int[] months;
         if(!isLeapYear(year))
             months = new int[]{0,31,28,31,30,31,30,31,31,30,31,30,31};
@@ -23,14 +28,14 @@ class Date implements Comparable<Date> {
         return months;
     }
 
-    public static boolean isValidDate(int day, int month, int year) {
+    public boolean isValidDate(int day, int month, int year) {
         int[] months = getMonths(year);
         if(month < 1 || month > 12) return false;
         if(year < 0) return false;
         return day >= 1 && day <= months[month];
     }
 
-    public static boolean isLeapYear(int year) {
+    public boolean isLeapYear(int year) {
         if(year % 400 == 0)
             return true;
         else if (year % 100 == 0)
@@ -50,8 +55,8 @@ class Date implements Comparable<Date> {
         int[] months = getMonths(year);
         if(isValidDate(day - 1, month, year))
             return new Date(day - 1, month, year);
-        if(isValidDate(months[month - 1], month + 1, year))
-            return new Date(months[month - 1], month + 1, year);
+        if(isValidDate(months[month - 1], month - 1, year))
+            return new Date(months[month - 1], month - 1, year);
         return new Date(31,  12, year - 1);
     }
 
@@ -65,5 +70,13 @@ class Date implements Comparable<Date> {
         if(this.year == other.year)
             return this.month > other.month ? 1 : -1;
         return this.year > other.year ? 1 : -1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == this) return true;
+        if(!(o instanceof Date)) return false;
+        Date date = (Date) o;
+        return date.year == this.year && date.month == this.month && date.day == this.day;
     }
 }
