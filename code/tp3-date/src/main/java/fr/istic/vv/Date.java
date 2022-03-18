@@ -20,12 +20,10 @@ class Date implements Comparable<Date> {
 
     // Get the number of days for each month based on the year
     public int[] getMonths(int year) {
-        int[] months;
         if(!isLeapYear(year))
-            months = new int[]{0,31,28,31,30,31,30,31,31,30,31,30,31};
+            return new int[]{0,31,28,31,30,31,30,31,31,30,31,30,31};
         else
-            months = new int[]{0,31,29,31,30,31,30,31,31,30,31,30,31};
-        return months;
+           return new int[]{0,31,29,31,30,31,30,31,31,30,31,30,31};
     }
 
     public boolean isValidDate(int day, int month, int year) {
